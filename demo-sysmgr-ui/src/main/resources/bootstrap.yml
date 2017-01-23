@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: micro-demo-sysmgr-ui
+  thymeleaf:
+    cache: false
+security:
+  sessions: NEVER
+eureka:
+  instance:
+    non-secure-port: ${server.port:8081}
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+zuul:
+  ignored-services: '*'
+  routes:
+    micro-demo-sysmgr-rest: /sysmgr-api/**   
+    
+# 日志
+logging:
+  level:
+    org.dante.demo.sysmgr.client: DEBUG 
