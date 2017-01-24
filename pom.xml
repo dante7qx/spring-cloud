@@ -10,6 +10,7 @@
 	<description>eKing Hanglv microservice Center</description>
 
 	<modules>
+		<module>demo-eureka-cluster</module>
 		<module>demo-eureka-discovery</module>
 		<module>demo-getway-ui</module>
 		<module>demo-sysmgr-ui</module>
