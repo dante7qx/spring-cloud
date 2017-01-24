@@ -1,7 +1,0 @@
-server:
-  port: 8080
-  context-path: /ui
-eureka:
-  client:
-    healthcheck:
-      enabled: true
