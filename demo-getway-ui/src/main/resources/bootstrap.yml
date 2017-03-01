@@ -1,14 +1,17 @@
 spring:
   application:
     name: micro-demo-getway-ui
-  thymeleaf:
-    cache: false
+  cloud:
+    config: 
+      profile: ${config.profile:test}
+      enabled: true
+      discovery:
+        service-id: MICRO-DEMO-CONFIG-SERVER
 zuul:
   routes:
     micro-demo-sysmgr-ui:
       path: /sysmgr/**
       sensitive-headers: 
-      service-id: micro-demo-sysmgr-ui
 eureka:
   instance:
     non-secure-port: ${server.port:8080}
