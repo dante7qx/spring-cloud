@@ -1,8 +1,11 @@
 spring:
   application:
     name: micro-demo-sysmgr-ui
-  thymeleaf:
-    cache: false
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: MICRO-DEMO-CONFIG-SERVER
 security:
   sessions: NEVER
 eureka:
@@ -15,8 +18,3 @@ zuul:
   ignored-services: '*'
   routes:
     micro-demo-sysmgr-rest: /sysmgr-api/**   
-    
-# 日志
-logging:
-  level:
-    org.dante.demo.sysmgr.client: DEBUG 

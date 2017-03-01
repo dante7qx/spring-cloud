@@ -1,0 +1,6 @@
+spring:
+  thymeleaf:
+    cache: false
+logging:
+  level:
+    org.dante.demo.sysmgr.client: DEBUG

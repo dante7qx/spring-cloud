@@ -2,7 +2,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost/springsecurity
+    url: jdbc:mysql://localhost/microservice
     username: root
     password: '{cipher}AQAPvodwzXG+o5a1U4M48HmPbW0B4ZGNIqxgWn5m/8P5xV7WuYEauHUAoM1zx72XxJQXvre9fHozW0mcDi44PJcSA53UqqVznWJVDKq6L+YipSjLqRMDTc2DFhIS3BLiTs87LmLvlCKXUlZ4O5MH35ZILoblK79BlIn7o9iw9ctmeZhgfvEza0cWi8KMIHiTuZOn7jUwkbEv3cA1p9JyVc0AmYkJrKarFbI1GSgpymrlo//iiK705njSEUeVSm2R7gc8SLZHiIEhV/pU522R1CqFBriyF1C0RhMuRi99t0C77QaNaOCU3eYmQcXDeqSay8lrOnzNMMAMM2U9ddMclIjZ+3fVDrHc0ZLN4DdrPrfZgh+PaZH7qoeR5goi3IxuqMg='
     initialSize: 5

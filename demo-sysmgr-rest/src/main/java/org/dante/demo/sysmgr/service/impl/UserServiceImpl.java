@@ -9,12 +9,14 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import org.dante.demo.sysmgr.constant.UserConstant;
 import org.dante.demo.sysmgr.dao.UserDao;
 import org.dante.demo.sysmgr.dao.UserSpecs;
 import org.dante.demo.sysmgr.domain.Authority;
 import org.dante.demo.sysmgr.domain.Role;
 import org.dante.demo.sysmgr.domain.User;
 import org.dante.demo.sysmgr.dto.req.PageReq;
+import org.dante.demo.sysmgr.dto.req.UserReq;
 import org.dante.demo.sysmgr.dto.resp.PageResp;
 import org.dante.demo.sysmgr.dto.resp.UserResp;
 import org.dante.demo.sysmgr.service.AbstractService;
@@ -70,6 +72,27 @@ public class UserServiceImpl extends AbstractService<UserResp, User> implements 
 	@Override
 	public PageResp<UserResp> findPage(PageReq pageReq) throws Exception {
 		return super.queryPage(pageReq);
+	}
+	
+	@Override
+	public UserResp save(UserReq userReq) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserResp update(UserReq userReq) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteById(Long id) throws Exception {
+		User user = userDao.findOne(id);
+		if(user != null) {
+			user.setStatus(UserConstant.USER_STATUS_DEL);
+			userDao.save(user);
+		}
 	}
 	
 	private Set<String> convertRoleToAuths(Set<Role> roles) {
