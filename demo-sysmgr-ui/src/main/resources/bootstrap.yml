@@ -2,7 +2,8 @@ spring:
   application:
     name: micro-demo-sysmgr-ui
   cloud:
-    config:
+    config: 
+      profile: ${config.profile:test}
       discovery:
         enabled: true
         service-id: MICRO-DEMO-CONFIG-SERVER
