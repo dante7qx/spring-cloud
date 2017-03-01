@@ -7,8 +7,12 @@ spring:
     config:
       server:
         git:
-          uri: file://Users/dante/Documents/Project/spring/spring-cloud/demo-config-repo
-    bus:
+          uri: https://github.com/dante7qx/spring-cloud.git
+          username: dante7qx
+          password: Dante2012
+          search-paths:
+            - demo-config-repo
+    bus: 
       trace:
         enabled: true
   rabbitmq:

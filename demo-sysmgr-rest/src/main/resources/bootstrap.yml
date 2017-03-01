@@ -3,11 +3,10 @@ spring:
     name: micro-demo-sysmgr-rest
   cloud:
     config:
+      profile: ${config.profile:test}
       discovery:
         enabled: true
         service-id: MICRO-DEMO-CONFIG-SERVER
-  profiles:
-    active: ${config.profile:test}
 eureka:
   instance:
     non-secure-port: ${server.port:7001}

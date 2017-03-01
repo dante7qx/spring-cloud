@@ -27,10 +27,14 @@ spring:
       hibernate:
         format_sql: true
         enable_lazy_load_no_trans: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: dante
+    password: 123456
 logging:
   level:
     root: info
     org.hibernate: info
     org.hibernate.type.descriptor.sql.BasicBinder: trace
     org.hibernate.type.descriptor.sql.BasicExtractor: trace
-    org.dante.demo: debug
