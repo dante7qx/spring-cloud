@@ -11,7 +11,8 @@ public class ResourceResp {
 	private String fullId;
 	private Integer orderId;
 	private String resourceDesc;
-	private Set<String> authoritys;
+	private String authoritys;
+	
 	public Long getId() {
 		return id;
 	}
@@ -60,10 +61,10 @@ public class ResourceResp {
 	public void setResourceDesc(String resourceDesc) {
 		this.resourceDesc = resourceDesc;
 	}
-	public Set<String> getAuthoritys() {
+	public String getAuthoritys() {
 		return authoritys;
 	}
-	public void setAuthoritys(Set<String> authoritys) {
+	public void setAuthoritys(String authoritys) {
 		this.authoritys = authoritys;
 	}
 	

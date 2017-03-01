@@ -59,8 +59,7 @@ public class UserServiceImpl extends AbstractService<UserResp, User> implements 
 	@Override
 	public UserResp findByAccountAndAuthCode(String account, List<String> authCodes) throws Exception {
 		User user = userDao.findOne(UserSpecs.queryByAccountAndAuthCode(account, authCodes));
-		UserResp userResp = switchDomainToDto(user);
-		return userResp;
+		return switchDomainToDto(user);
 	}
 	
 	@Override

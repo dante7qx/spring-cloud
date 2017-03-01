@@ -2,7 +2,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost/springsecurity
+    url: jdbc:mysql://localhost/microservice
     username: root
     password: iamdante
     initialSize: 5
@@ -19,9 +19,6 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     filters: stat,wall
   jpa:
-    hibernate:
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
     properties:
       hibernate:

@@ -15,11 +15,10 @@ import org.dante.demo.sysmgr.domain.User;
 import org.springframework.data.jpa.domain.Specification;
 
 public class UserSpecs {
-
 		
 	public static Specification<User> queryByAccountAndAuthCode(String account, List<String> authCodes)  {
 		return new Specification<User>() {
-
+			
 			@Override
 			public Predicate toPredicate(Root<User> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
 				SetJoin<User, Role> roleJoin = root.join(root.getModel().getSet("roles", Role.class), JoinType.LEFT);
@@ -32,7 +31,6 @@ public class UserSpecs {
 				
 				return query.getRestriction();
 			}
-			
 		};
 	}
 }

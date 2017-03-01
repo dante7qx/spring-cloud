@@ -1,8 +1,8 @@
 package org.dante.demo.sysmgr.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,9 +18,12 @@ public class Authority implements Serializable {
 	private Long id;
 	private String name;
 	private String code;
-	@Column(name="authority_desc")
 	private String authorityDesc;
 	private Long pid;
+	private String createUser;
+	private Date createDate;
+	private String updateUser;
+	private Date updateDate;
 
 	public Long getId() {
 		return id;
@@ -53,13 +56,45 @@ public class Authority implements Serializable {
 	public void setPid(Long pid) {
 		this.pid = pid;
 	}
-	
+
 	public String getAuthorityDesc() {
 		return authorityDesc;
 	}
 
 	public void setAuthorityDesc(String authorityDesc) {
 		this.authorityDesc = authorityDesc;
+	}
+
+	public String getCreateUser() {
+		return createUser;
+	}
+
+	public void setCreateUser(String createUser) {
+		this.createUser = createUser;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public String getUpdateUser() {
+		return updateUser;
+	}
+
+	public void setUpdateUser(String updateUser) {
+		this.updateUser = updateUser;
+	}
+
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
 	}
 
 	@Override

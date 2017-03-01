@@ -1,10 +1,8 @@
 package org.dante.demo.sysmgr.service.impl;
 
 import java.util.List;
-import java.util.Set;
 
 import org.dante.demo.sysmgr.dao.ResourceDao;
-import org.dante.demo.sysmgr.domain.Authority;
 import org.dante.demo.sysmgr.domain.Resource;
 import org.dante.demo.sysmgr.dto.resp.ResourceResp;
 import org.dante.demo.sysmgr.service.ResourceService;
@@ -17,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 
 
 @Service
@@ -27,7 +24,7 @@ public class ResourceServiceImpl implements ResourceService {
 	@Autowired
 	private ResourceDao resourceDao;
 	
-	@Cacheable(value = "sysmrg-resourcecache")
+	@Cacheable(value = "sysmrg-resource-cache")
 	@Override
 	public List<ResourceResp> findAll() throws Exception {
 		List<Resource> resources = resourceDao.findAll(new Sort(Sort.Direction.ASC, "orderId"));
@@ -36,21 +33,12 @@ public class ResourceServiceImpl implements ResourceService {
 			for (Resource resource : resources) {
 				ResourceResp resp = new ResourceResp();
 				BeanUtils.copyProperties(resource, resp, "authoritys");
-				resp.setAuthoritys(convertAuthority(resource.getAuthoritys()));
+				resp.setAuthoritys(resource.getAuthority().getCode());
 				list.add(resp);
 			}
 		}
 		return list;
 	}
-
 	
-	private Set<String> convertAuthority(Set<Authority> authoritys) {
-		Set<String> auths = Sets.newHashSet();
-		if(!CollectionUtils.isEmpty(authoritys)) {
-			for (Authority authority : authoritys) {
-				auths.add(authority.getCode());
-			}
-		}
-		return auths;
-	}
+
 }
