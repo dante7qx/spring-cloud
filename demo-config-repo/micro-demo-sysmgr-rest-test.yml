@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/springsecurity
+    username: root
+    password: '{cipher}AQAPvodwzXG+o5a1U4M48HmPbW0B4ZGNIqxgWn5m/8P5xV7WuYEauHUAoM1zx72XxJQXvre9fHozW0mcDi44PJcSA53UqqVznWJVDKq6L+YipSjLqRMDTc2DFhIS3BLiTs87LmLvlCKXUlZ4O5MH35ZILoblK79BlIn7o9iw9ctmeZhgfvEza0cWi8KMIHiTuZOn7jUwkbEv3cA1p9JyVc0AmYkJrKarFbI1GSgpymrlo//iiK705njSEUeVSm2R7gc8SLZHiIEhV/pU522R1CqFBriyF1C0RhMuRi99t0C77QaNaOCU3eYmQcXDeqSay8lrOnzNMMAMM2U9ddMclIjZ+3fVDrHc0ZLN4DdrPrfZgh+PaZH7qoeR5goi3IxuqMg='
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: false
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        enable_lazy_load_no_trans: true
+logging:
+  level:
+    root: info
+    org.hibernate: info
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.type.descriptor.sql.BasicExtractor: trace
+    org.dante.demo: debug

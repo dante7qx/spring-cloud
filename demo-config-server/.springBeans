@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:org.dante.demo.configserver.DemoSysmgrUiApplication</config>
+		<config>java:org.dante.demo.configserver.DemoConfigServerApplication</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

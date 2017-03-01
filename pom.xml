@@ -27,6 +27,7 @@
 	<modules>
 		<module>demo-eureka-cluster</module>
 		<module>demo-eureka-discovery</module>
+		<module>demo-config-server</module>
 		<module>demo-getway-ui</module>
 		<module>demo-sysmgr-ui</module>
 		<module>demo-sysmgr-rest</module>

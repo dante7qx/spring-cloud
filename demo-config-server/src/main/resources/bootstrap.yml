@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: micro-demo-config-server
+  profiles:
+    active: dev,test,uat,prod
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://Users/dante/Documents/Project/spring/spring-cloud/demo-config-repo
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: dante
+    password: 123456
+encrypt:
+  keyStore:
+    location: classpath:/server.jks
+    password: letmein
+    alias: mytestkey
+    secret: changeme
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+logging:
+  level:
+    com.netflix.discovery.TimedSupervisorTask: off
