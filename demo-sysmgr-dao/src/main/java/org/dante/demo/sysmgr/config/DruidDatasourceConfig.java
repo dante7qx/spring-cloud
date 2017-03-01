@@ -31,19 +31,10 @@ public class DruidDatasourceConfig {
 	private int minIdle;
 	@Value("${spring.datasource.maxActive}")
 	private int maxActive;
-	/**
-	 * 配置获取连接等待超时的时间
-	 */
 	@Value("${spring.datasource.maxWait}")
 	private int maxWait;
-	/**
-	 * 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-	 */
 	@Value("${spring.datasource.timeBetweenEvictionRunsMillis}")
 	private int timeBetweenEvictionRunsMillis;
-	/**
-	 * 配置一个连接在池中最小生存的时间，单位是毫秒
-	 */
 	@Value("${spring.datasource.minEvictableIdleTimeMillis}")
 	private int minEvictableIdleTimeMillis;
 	@Value("${spring.datasource.validationQuery}")
@@ -54,14 +45,8 @@ public class DruidDatasourceConfig {
 	private boolean testOnBorrow;
 	@Value("${spring.datasource.testOnReturn}")
 	private boolean testOnReturn;
-	/**
-	 * 打开PSCache，并且指定每个连接上PSCache的大小
-	 */
 	@Value("${spring.datasource.poolPreparedStatements}")
 	private boolean poolPreparedStatements;
-	/**
-	 * 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙, 'config'用于加密
-	 */
 	@Value("${spring.datasource.maxPoolPreparedStatementPerConnectionSize}")
 	private int maxPoolPreparedStatementPerConnectionSize;
 	@Value("${spring.datasource.filters}")
